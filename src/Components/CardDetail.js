@@ -13,36 +13,28 @@ let getDataFromLocal = () => {
   }
 };
 const CardDetail = () => {
-  const {setWishData,wishData,moveToHome} = useGlobalContext();
+  const { setWishData, wishData } = useGlobalContext();
   const [cardData, setCardData] = useState(getDataFromLocal());
   const navigate = useNavigate();
-  //console.log(cardData);
+ 
 
-  
-
-  const deleteCard = (id) =>{
-    let res = cardData.filter((x)=>{
-      return x[0].mal_id !== id;
-    });
-    //console.log(res);
-    setWishData(res);
-    //localStorage.setItem("wishList", JSON.stringify(wishData));
-    
-  }
+  const moveToHome = () => {
+    navigate("/");
+  };
 
   return (
     <>
       <Container className="mt-3 d-flex justify-content-center align-item-center flex-column text-center cardDetails ">
-      <h3>Watch Later Lists</h3>
+        <h3>Watch Later Lists</h3>
         <AiFillHome onClick={moveToHome} className="home_icon" />
-        <Row className="d-flex justify-content-center align-item-center" >
+        <Row className="d-flex justify-content-center align-item-center">
           {cardData.length == 0 ? (
-            <h4 style={{color:'red'}} >No Card list Available</h4>
+            <h4 style={{ color: "red" }}>No Card list Available</h4>
           ) : (
             cardData &&
             cardData.map((val, i) => {
               return (
-                <Col className="mb-3" key={i} >
+                <Col className="mb-3" key={i}>
                   <Card className="card ">
                     <Row className="d-flex justify-content-center align-items-center ">
                       <Col>
@@ -56,10 +48,10 @@ const CardDetail = () => {
                         <Card.Text>{val[0].title}</Card.Text>
                       </Col>
                       <Col>
-                        
-                        <Col> <Button className="mb-2" onClick={()=>deleteCard(val[0].mal_id)} >Delete</Button></Col>
-                        <Col> <a href={val[0].url}> More </a> </Col>
-                        
+                        <Col>
+                          {" "}
+                          <a href={val[0].url}> More Details </a>{" "}
+                        </Col>
                       </Col>
                     </Row>
                   </Card>
