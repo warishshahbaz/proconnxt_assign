@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/proconnxt_assign%20/static/css/main.8bf27834.css",
+    "main.js": "/proconnxt_assign%20/static/js/main.0c673612.js",
+    "static/js/787.0420ccf9.chunk.js": "/proconnxt_assign%20/static/js/787.0420ccf9.chunk.js",
+    "index.html": "/proconnxt_assign%20/index.html",
+    "main.8bf27834.css.map": "/proconnxt_assign%20/static/css/main.8bf27834.css.map",
+    "main.0c673612.js.map": "/proconnxt_assign%20/static/js/main.0c673612.js.map",
+    "787.0420ccf9.chunk.js.map": "/proconnxt_assign%20/static/js/787.0420ccf9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8bf27834.css",
+    "static/js/main.0c673612.js"
+  ]
+}
