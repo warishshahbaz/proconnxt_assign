@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Filter from "./Components/Filter";
+import Home from "./Components/Home";
+import Pagination from "./Components/Pagination";
+import Search from "./Components/Search";
+import {Routes, Route } from "react-router-dom";
+import Outlets from "./Components/Outlet";
+import CardDetail from "./Components/CardDetail";
+import DescCard from "./Components/DescCard";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/cards" element={<CardDetail />} />
+        <Route exact path="/" index element={<Outlets />} />
+        <Route path="/desc" element={<DescCard/>} />
+      </Routes>
+    </>
   );
 }
 
