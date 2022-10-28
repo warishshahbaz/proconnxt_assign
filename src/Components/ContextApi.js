@@ -3,21 +3,24 @@ import { useNavigate } from "react-router-dom";
 
 let AppContext = createContext();
 
-const url = `https://api.jikan.moe/v4/anime`;
+
 const AppProvider = ({ children }) => {
   const [listData, setListData] = useState([]);
   const [subStituData, setSubstituData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [showPerPage] = useState(8);
   const [wishData, setWishData] = useState([]);
-  const [descCard,setDescCard] = useState([]);
+  const [descCard, setDescCard] = useState([]);
   const navigate = useNavigate();
+  const [pageCount, setPageCount] = useState(0);
 
-  const getListData = async () => {
-    let result = await fetch(url)
+  const getListData = async (currPage = 1) => {
+    let result = await fetch(`https://api.jikan.moe/v4/anime?page=1&limit=8`)
       .then((res) => res.json())
       .then((res) => {
-        console.log(res.data);
+        console.log(res);
+        //let total = res.pagination.items.count;
+        setPageCount(Math.ceil(25 / 8));
         listData == [] ? <h3>Loading...</h3> : setListData(res.data);
 
         setSubstituData(res.data);
@@ -29,7 +32,7 @@ const AppProvider = ({ children }) => {
     getListData();
   }, []);
 
-  /**   Filters **/
+  /**   Filter **/
   const comedySearch = () => {
     setListData(subStituData);
     let res = subStituData.filter((val) => {
@@ -65,15 +68,6 @@ const AppProvider = ({ children }) => {
     setListData(res);
   };
 
-  /***  Pagination  **/
-  const indexOfLastPage = currentPage * showPerPage;
-  const indexOfFirstPage = indexOfLastPage - showPerPage;
-  const currentState = listData.slice(indexOfFirstPage, indexOfLastPage);
-  const totalPage = listData.length;
-
-  const paginate = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
 
   /** move to home page */
 
@@ -92,14 +86,12 @@ const AppProvider = ({ children }) => {
         advantureSearch,
         mystrerySearch,
         showPerPage,
-        totalPage,
-        paginate,
-        currentState,
         wishData,
         setWishData,
         setDescCard,
         descCard,
         moveToHome,
+        pageCount,
       }}
     >
       {children}

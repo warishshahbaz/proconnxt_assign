@@ -52,7 +52,7 @@ const Home = () => {
           {listData.length == 0 ? (
             <h2 style={{ color: "red" }}>No Data Availble</h2>
           ) : (
-            currentState.map((x, i) => {
+            listData && listData.map((x, i) => {
               return (
                 <Col
                   className="d-flex justify-content-center align-items-center mb-4"

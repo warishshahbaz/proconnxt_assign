@@ -1,20 +1,18 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
-import Filter from './Filter'
-import Home from './Home'
-import Pagination from './Pagination'
-import Search from './Search'
+import React from "react";
+import Filter from "./Filter";
+import Home from "./Home";
+import Paginate from "./Paginate";
+import Search from "./Search";
 
 const Outlets = () => {
   return (
     <>
-    <Search/>
-    <Filter/>
-    <Home/>
-    <Pagination/>
-     
+      <Search />
+      <Filter />
+      <Home />
+      <Paginate />
     </>
-  )
-}
+  );
+};
 
-export default Outlets
+export default Outlets;
