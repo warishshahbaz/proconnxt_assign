@@ -95,8 +95,8 @@ const Home = () => {
                         <Col>
                           <Card.Text style={{ color: "grey" }}>
                             {" "}
-                            <span style={{ color: "pink" }}> Rating:</span>{" "}
-                            {x.rating}
+                            <span style={{ color: "pink" }}>⭐</span>{" "}
+                            {x.score}
                           </Card.Text>
                         </Col>
                       </Row>
