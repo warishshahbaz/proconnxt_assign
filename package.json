@@ -1,6 +1,6 @@
 {
   "name": "assignment",
-  "homepage": "https://warishSonu.github.io/proconnxt_assign ",
+  "homepage": "https://warishshahbaz.github.io/proconnxt_assign ",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,7 +9,6 @@
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.2.2",
     "bootstrap-icons": "^1.9.1",
-    "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
     "react-bootstrap-icons": "^1.9.1",
@@ -46,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
